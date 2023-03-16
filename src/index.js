@@ -1,14 +1,41 @@
-import _ from 'lodash';
 import './style.css';
+import involvmentApi from './modules/involvment.js';
+import callingLikes from './modules/likes';
 
-function component() {
-  const element = document.createElement('div');
+involvmentApi();
+const holder = document.querySelector('#moviz');
 
-  // Lodash, now imported by the script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
+(async () => {
+  const getData = await fetch('https://api.tvmaze.com/search/shows?q=games');
+  const request = await getData.json();
+  const movieArray = Array.from(request);
 
-  return element;
-}
+  // Generating array of HTML strings for each search result
+  const movieHTML = movieArray.map(item => `
+      <div class="col-4" id="${item.show.id}">
+        <div class="row">
+          <div class="col-12">
+            <img src="${item.show.image.medium}" alt="img1">
+          </div>
+          <div class="col-12" id="name-likes">
+            <span>${item.show.name}</span>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary">Comments</button>
+          </div>
+        </div>
+      </div>
+    `);
 
-document.body.appendChild(component());
+  // Getting likes and generating HTML for each like
+  const likes = await callingLikes();
+  const likesHTML = likes.map(like => `
+        <span ${like.id}>
+          <i class="fa fa-heart-o liked" data-itemid="${like.id}"></i> <br>
+          <span class="like">${like.likes}</span>
+        </span>
+    `);
+
+  // Joining the HTML strings into a single string and setting it as the innerHTML of the holder element
+  holder.innerHTML = movieHTML.map((html, i) => html.replace('</div>', `${likesHTML[i]}</div>`)).join('');
+})();
