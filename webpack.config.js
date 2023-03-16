@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   entry: {
     index: './src/index.js',
   },
@@ -28,5 +29,10 @@ module.exports = {
       },
     ],
   },
-
+  resolve: {
+    alias: {
+      '@modules': path.resolve(__dirname, 'src/modules/'),
+    },
+    extensions: ['.js'],
+  },
 };
