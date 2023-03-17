@@ -3,12 +3,12 @@ import callingLikes from './likes.js';
 import { nav } from './navbar.js';
 import { TvShow } from './popup.js';
 import { initModal } from './modal.js'
-const holder = document.querySelector('#moviz');
-
 involvmentApi();
 nav();
 
 export const showMoviez = async () => {
+    const holder = document.querySelector('#moviz');
+
     const getData = await fetch('https://api.tvmaze.com/search/shows?q=games');
     const request = await getData.json();
     const movieArray = Array.from(request);
@@ -43,4 +43,5 @@ holder.innerHTML = movieHTML.map((html, i) => html.replace('</div>', `${likesHTM
 await TvShow.getTvShows();
 initModal();
 };
+
 

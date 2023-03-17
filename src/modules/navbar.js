@@ -1,13 +1,10 @@
-const navBar =document.querySelector('#contents');
-
-
 export const nav =async () => {
     const getData = await fetch('https://api.tvmaze.com/search/shows?q=games');
     const request = await getData.json();
     const movieArray = Array.from(request);
 const counter = movieArray.length;
 
-
+const navBar =document.querySelector('#contents');
 // Generating number of moviez to navigation bar 
 const movvieItems = 
 `<div class="col-2" id="logo" href="index.html"><img
