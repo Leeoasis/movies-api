@@ -1,5 +1,6 @@
 body{
   background:black;
+  padding-top:1%;
 }
 #contents{
   display: flex;
@@ -13,6 +14,7 @@ body{
 
 #logo img{
   width: 50%;
+ border-radius:50%;
 }
 #moviz div{
   margin-bottom:10px;
