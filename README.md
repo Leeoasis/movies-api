@@ -23,7 +23,7 @@
   - [📝 License ](#-license-)
 
 # 📖 JavaScript Capstone <a name="about-project"></a>
-**JavaScript Capstone** The JavaScript capstone project is about building your own web application based on an external API. This project uses the tvmaze api to provide information about movies.
+**movies api** The movies api capstone project is about building your own web application based on an external API. This project uses the tvmaze api to provide information about movies.
 
 ## 🛠 Built With <a name="built-with"></a>
 
