@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/Leeoasis/Webpack-project/issues"
   },
-  "homepage": "https://Leeoasis.github.io/movies-api",
+  "homepage": "https://Leeoasis.github.io/movies-api/",
   "devDependencies": {
     "@babel/core": "^7.21.3",
     "@babel/plugin-transform-modules-commonjs": "^7.21.2",
