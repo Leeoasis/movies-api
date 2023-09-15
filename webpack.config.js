@@ -8,6 +8,7 @@ module.exports = {
   },
   devServer: {
     static: './dist',
+    disableHostCheck: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
