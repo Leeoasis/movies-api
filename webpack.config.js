@@ -8,10 +8,8 @@ module.exports = {
   },
   devServer: {
     static: './dist',
-    devMiddleware: {
       headers: {
         'Access-Control-Allow-Origin': '*',
-      },
     },
   },
   plugins: [
