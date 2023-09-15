@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --coverage",
     "testEnvironment": "jsdom",
-    "build": "webpack",
+    "build": "webpack --mode production",
     "start": "webpack serve --open"
   },
   "repository": {
@@ -44,7 +44,7 @@
     "stylelint-csstree-validator": "^1.9.0",
     "stylelint-scss": "^3.21.0",
     "webpack": "^5.76.1",
-    "webpack-cli": "^5.0.1",
+    "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.12.0"
   },
   "dependencies": {
