@@ -9,6 +9,9 @@ module.exports = {
   devServer: {
     static: './dist',
     disableHostCheck: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
